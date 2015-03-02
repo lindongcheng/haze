@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="LOG_HOME" value="/logs/zf819" />
+	<property name="LOG_PATTERN" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n" />
+
+	
+
+	<!-- 文件日志-业务相关BIZ -->
+	<appender name="LOG.Biz" class="com.shengpay.commons.haze.sdk.integration.LogbackAppender"/>
+
+	<logger name="com.shengpay" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="LOG.Biz" />
+	</logger>
+
+	<logger name="org.apache.activemq">
+		<level value="WARN" />
+	</logger>
+
+	<logger name="java.sql">
+		<level value="DEBUG" />
+	</logger>
+
+	<logger name="org.springframework">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="org.apache.zookeeper">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="com.alibaba.dubbo">
+		<level value="DEBUG" />
+	</logger>
+
+	<root>
+		<level value="DEBUG" />
+		<appender-ref ref="LOG.Biz" />
+	</root>
+</configuration>
