@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.shengpay.commons.haze</groupId>
         <artifactId>haze</artifactId>
-        <version>0.0.22-SNAPSHOT</version>
+        <version>0.0.23-SNAPSHOT</version>
     </parent>
     <artifactId>haze_sdk</artifactId>
     <dependencies>
