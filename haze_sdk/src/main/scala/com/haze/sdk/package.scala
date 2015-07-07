@@ -1,8 +1,6 @@
 package com.haze
 
 import java.net.{URI, InetAddress}
-import org.apache.hadoop.fs.{FileSystem, Path}
-import org.apache.hadoop.conf.Configuration
 import java.lang.reflect.Field
 import java.util.TimerTask
 import com.haze.sdk.formater.{AnyFormater, Invoker}
@@ -19,9 +17,7 @@ package object sdk {
   val FILE_LIFE: Long = 1000 * 60 * 60 * 25l
   val LOCAL_HOST = InetAddress.getLocalHost.toString.replace('/', '_')
 
-  implicit def str2HadoopPath(str: String) = new Path(str)
   implicit def str2URI(str: String) = URI.create(str)
-  implicit def str2FileSystem(str: String) = FileSystem.get(str, new Configuration)
   implicit def class2RichClass(any: Class[_]) = RichClass(any)
   implicit def field2RichField(f: Field) = RichField(f)
 

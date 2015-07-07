@@ -32,10 +32,7 @@ object FileWriter {
     normalFileMap.get(dateStr) match {
       case Some(file) => file
       case None => {
-        val file = hdfsHost match {
-          case null => new LocalFileWriter(logDir, dateStr)
-          case _ => new HdfsFileWriter(hdfsHost, dateStr)
-        }
+        val file = new LocalFileWriter(logDir, dateStr)
         normalFileMap(dateStr) = file
         println("create log file " + file.path)
         logger.info("create log file {}", file.path)
